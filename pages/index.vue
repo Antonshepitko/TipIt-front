@@ -32,7 +32,8 @@
         </div>
       </div>
     </div>
-  </template>
+  </div>
+</template>
 
 <script setup>
 import { ref } from 'vue';
@@ -41,7 +42,7 @@ import { useRouter } from 'vue-router';
 const isRegister = ref(false);
 const username = ref('');
 const password = ref('');
-const agreeTerms = ref(false); // Для чекбокса, если регистрируемся
+const agreeTerms = ref(false);
 const router = useRouter();
 
 const handleSubmit = async () => {
@@ -67,7 +68,7 @@ const handleSubmit = async () => {
 
 <style scoped>
 .card {
-  background-color: #1e1e2f; /* Тёмный фон, как на скрине */
+  background-color: #1e1e2f;
 }
 
 .placeholder-gray-500::placeholder {
@@ -75,7 +76,7 @@ const handleSubmit = async () => {
 }
 
 .btn-primary {
-  background-color: #7b1fa2; /* Фиолетовая кнопка */
+  background-color: #7b1fa2;
   border-color: #7b1fa2;
 }
 
