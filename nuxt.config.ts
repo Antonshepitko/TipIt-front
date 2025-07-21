@@ -5,9 +5,4 @@ export default defineNuxtConfig({
       title: 'TipIt',
     },
   },
-  vite: {
-    plugins: [
-      require('vite-tsconfig-paths').default(),
-    ],
-  },
 });
