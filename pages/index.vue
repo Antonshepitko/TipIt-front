@@ -6,15 +6,15 @@
           <div class="text-left">
             <h1 class="display-4">Capturing Moments,</h1>
             <h1 class="display-4">Creating Memories</h1>
-            <img src="https://cdn.pixabay.com/photo/2018/03/30/15/41/money-3274478_1280.jpg" alt="Donation Money" class="img-fluid mt-4" style="max-width: 300px; border-radius: 10px;">
+            <img src="/money-image.jpg" alt="Donation Money" class="img-fluid mt-4" style="max-width: 300px; border-radius: 10px;">
           </div>
         </div>
         <div class="col-md-6 d-flex align-items-center justify-content-center">
           <div class="card p-4 shadow-lg" style="width: 400px; background-color: #2F2F4A; border: none; border-radius: 15px;">
-            <h2 class="text-center mb-4 text-white">{{ isRegister ? 'Create an account' : 'Login' }}</h2>
+            <h2 class="text-center mb-4 text-white">WELCOME!</h2>
             <form @submit.prevent="handleSubmit">
-              <input v-model="username" type="text" placeholder="Username" class="form-control mb-3" style="background-color: #2F2F4A; color: #FFFFFF; border: none; border-radius: 10px; placeholder-color: #A0AEC0;" />
-              <input v-model="password" type="password" placeholder="Password" class="form-control mb-3" style="background-color: #2F2F4A; color: #FFFFFF; border: none; border-radius: 10px; placeholder-color: #A0AEC0;" />
+              <input v-model="username" type="text" placeholder="Username" class="form-control mb-3" style="background-color: #2F2F4A; color: #FFFFFF; border: 1px solid #FFFFFF; border-radius: 10px;" />
+              <input v-model="password" type="password" placeholder="Password" class="form-control mb-3" style="background-color: #2F2F4A; color: #FFFFFF; border: 1px solid #FFFFFF; border-radius: 10px;" />
               <div v-if="isRegister" class="form-check mb-3">
                 <input type="checkbox" class="form-check-input" id="terms" v-model="agreeTerms" />
                 <label class="form-check-label small text-white" for="terms">I agree to the Terms & Conditions</label>
@@ -23,13 +23,15 @@
                 {{ isRegister ? 'Create account' : 'Login' }}
               </button>
             </form>
-            <p class="text-center mt-3 small text-white cursor-pointer" @click="isRegister = !isRegister">
-              {{ isRegister ? 'Already have an account? Log in' : 'Don’t have an account? Create one' }}
+            <p class="text-center mt-3 small text-white">
+              {{ isRegister ? 'Already have an account? ' : 'Don’t have an account? ' }}
+              <span class="cursor-pointer fw-bold" style="color: #6B46C1;" @click="isRegister = !isRegister">
+                {{ isRegister ? 'Log in' : 'Create one' }}
+              </span>
             </p>
-            <div class="d-flex justify-content-between mt-4">
-              <button class="btn btn-outline-light w-100 me-2 rounded-pill" style="border-color: #A0AEC0; color: #A0AEC0;">Google</button>
-              <button class="btn btn-outline-light w-100 rounded-pill" style="border-color: #A0AEC0; color: #A0AEC0;">Apple</button>
-            </div>
+            <button class="btn w-100 rounded-pill" style="background-color: #9146FF; border-color: #9146FF; color: #FFFFFF;">
+              Login with Twitch
+            </button>
           </div>
         </div>
       </div>
@@ -69,24 +71,16 @@ const handleSubmit = async () => {
 </script>
 
 <style scoped>
-.card {
-  background-color: #2F2F4A;
-}
-
-.form-control::placeholder {
-  color: #A0AEC0;
-}
-
-.btn:hover {
-  background-color: #5A38A0;
-  border-color: #5A38A0;
-}
-
 .cursor-pointer {
   cursor: pointer;
 }
 
-.text-white {
-  color: #FFFFFF !important;
+.fw-bold {
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #5A38A0 !important;
+  border-color: #5A38A0 !important;
 }
 </style>
