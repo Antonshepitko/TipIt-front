@@ -1,19 +1,21 @@
 <template>
-  <div class="container mt-5 mx-auto" style="max-width: 800px;">
-    <h1 class="text-center mb-4 text-white">Your Donations</h1>
-    <div v-if="donations.length > 0" v-for="don in donations" :key="don._id" class="card mb-3 shadow">
-      <div class="card-body d-flex justify-content-between text-white">
-        <div>
-          <h5 class="card-title">{{ don.donorName }}</h5>
-          <p class="card-text">{{ don.message }}</p>
+  <div class="vh-100" style="background: linear-gradient(135deg, #1A1A2E 0%, #3A2E5C 100%);">
+    <div class="container mt-5 mx-auto" style="max-width: 800px;">
+      <h1 class="text-center mb-4 text-white">Your Donations</h1>
+      <div v-if="donations.length > 0" v-for="don in donations" :key="don._id" class="card mb-3 shadow" style="background-color: #2F2F4A; border: none; border-radius: 15px;">
+        <div class="card-body d-flex justify-content-between text-white">
+          <div>
+            <h5 class="card-title">{{ don.donorName }}</h5>
+            <p class="card-text">{{ don.message }}</p>
+          </div>
+          <span class="badge" style="background-color: #6B46C1;">{{ don.amount }} {{ don.currency }}</span>
         </div>
-        <span class="badge" style="background-color: #6B46C1;">{{ don.amount }} {{ don.currency }}</span>
       </div>
-    </div>
-    <div v-else class="text-center text-white">No donations yet.</div>
-    <div class="text-center mt-4">
-      <button @click="logout" class="btn me-2" style="background-color: #6B46C1; border-color: #6B46C1; color: #FFFFFF;">Logout</button>
-      <button @click="deleteUser" class="btn" style="background-color: #6B46C1; border-color: #6B46C1; color: #FFFFFF;">Delete User (Temp)</button>
+      <div v-else class="text-center text-white">No donations yet.</div>
+      <div class="text-center mt-4">
+        <button @click="logout" class="btn me-2" style="background-color: #6B46C1; border-color: #6B46C1; color: #FFFFFF;">Logout</button>
+        <button @click="deleteUser" class="btn" style="background-color: #6B46C1; border-color: #6B46C1; color: #FFFFFF;">Delete User (Temp)</button>
+      </div>
     </div>
   </div>
 </template>
@@ -23,7 +25,7 @@ import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import io from 'socket.io-client';
 
-const donations = ref([]); // Явно определён как реактивный массив
+const donations = ref([]);
 const router = useRouter();
 
 onMounted(async () => {

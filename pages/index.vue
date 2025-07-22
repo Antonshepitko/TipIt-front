@@ -6,7 +6,7 @@
           <div class="text-left">
             <h1 class="display-4">Capturing Moments,</h1>
             <h1 class="display-4">Creating Memories</h1>
-            <img src="/dono.png" alt="Donation Money" class="img-fluid mt-4" style="max-width: 300px; border-radius: 10px;">
+            <img src="/money-image.jpg" alt="Donation Money" class="img-fluid mt-4" style="max-width: 300px; border-radius: 10px;">
           </div>
         </div>
         <div class="col-md-6 d-flex align-items-center justify-content-center">
@@ -82,5 +82,9 @@ const handleSubmit = async () => {
 .btn:hover {
   background-color: #5A38A0 !important;
   border-color: #5A38A0 !important;
+}
+
+.form-control::placeholder {
+  color: #A0AEC0;
 }
 </style>
